@@ -16,7 +16,6 @@ class ProjectController extends Controller
     public function projectStore(){
         $project = new project();
         $project->first_name = request('first_name');
-        
         $project->second_name = request('second_name');
         $project->last_name = request('last_name');
         $project->save();

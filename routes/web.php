@@ -1,9 +1,9 @@
 <?php
 
  Route::get('/projects', 'ProjectController@index');
- Route::get('/projects/create', 'ProjectController@projectForm');
- Route::post('/projects', 'ProjectController@projectStore');
+ Route::get('/projects/create', 'ProjectController@create');
+ Route::post('/projects', 'ProjectController@Store');
  Route::get('/projects/{id}', 'ProjectController@show');
  
-Route::get("/categories/create","categoryController@create");
+Route::get("/categories","categoryController@create");
 Route::post("/categories","categoryController@store");

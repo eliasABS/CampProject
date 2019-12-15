@@ -10,15 +10,14 @@ class ProjectController extends Controller
     public function index(){
         return view('projects.index');
     }
-    public function projectForm(){
+    public function create(){
         return view('projects.projectForm');
     }
-    public function projectStore(){
+    public function store(){
         $project = new project();
-        $project->first_name = request('first_name');
-        
-        $project->second_name = request('second_name');
-        $project->last_name = request('last_name');
+        $project->project_name = request('project_name');
+        $project->address = request('address');
+        $project->budget = request('budget');
         $project->save();
     }
       

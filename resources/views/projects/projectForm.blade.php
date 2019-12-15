@@ -45,22 +45,15 @@
         <!-- LOGIN FORM START -->
         <div class="log">
             <div class="formhead">رائد الأعمال </div>
-            <form id="login_form" action="{{ url('/projects') }}" method="post">
+            <form id="login_form" action="{{ url ('/projects') }}" method="post">
             @csrf
-                <label>
-                    <input type="text" id="username" name="first_name" placeholder="الإسم الأول"/><span class="fa fa-user icons"></span>
-                </label>
-                <div class="alertms r8"></div>
-                <label>
-                    <input type="text" id="username" name="second_name" placeholder="إسم الأب"/><span class="fa fa-user icons"></span>
-                </label>
                 <div class="alertms r9"></div>
                 <label>
-                    <input type="text" id="username" name="last_name" placeholder="اللقب"/><span class="fa fa-user icons"></span>
+                    <input type="text" id="username" name="project_name" placeholder="إسم المشروع"/><span class="fa fa-user icons"></span>
                 </label>
                 <div class="alertms r10"></div>
                 <label>
-                    <input type="text" id="username" name="addres" placeholder="العنوان"/><span class="fa fa-user icons"></span>
+                    <input type="address" id="" name="address" placeholder="العنوان"/><span class="fa fa-user icons"></span>
                 </label><div class="alertms r10"></div>
                 <label>
                     <input type="text" id="username" name="budget" placeholder="الميزانية المطلوبة "/><span class="fa fa-user icons"></span>

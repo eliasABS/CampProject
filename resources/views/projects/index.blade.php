@@ -100,16 +100,22 @@ h4 a:hover{
 <body>
 <div class="maindiv">
     <div class="team-row">
+            
+    @foreach ($projects as $project)
         <div class=" profie-box">
+            
+            <h4>{{$project->project_name}} <a href=""></a></h4>
+            <small>طرابلس</small>
+            <pre>
+                <b>
+            <small>{{$category->}}</small></b>
+            <img src="../img/depositphotos_115690756-stock-illustration-young-and-elegant-woman-avatar.jpg">
         
-        <h4> <a href="">avinash kr</a></h4>
-        <small>طرابلس</small>
-        <pre>
-            <b>
-        <small>أطعمة</small></b>
-        <img src="../img/depositphotos_115690756-stock-illustration-young-and-elegant-woman-avatar.jpg">
-       
-        </div>
+        </div>  
+    @endforeach
+              
+        
+            
         
     </div>
 </div>

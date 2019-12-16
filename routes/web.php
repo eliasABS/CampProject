@@ -8,3 +8,5 @@ Route::get('/', function() {
  Route::get('/projects/{id}', 'ProjectController@show');
  Route::get("/categories/create","categoryController@create");
  Route::post("/categories","categoryController@store");
+ Route::get("/cities/create","cityController@create");
+ Route::post("/cities","cityController@store");

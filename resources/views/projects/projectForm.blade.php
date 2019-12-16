@@ -43,10 +43,10 @@
 
         
         <!-- LOGIN FORM START -->
-        <div class="log">
             <div class="formhead">رائد الأعمال </div>
-            <form id="login_form" action="{{ url ('/projects') }}" method="post">
+            <form action="{{ url('/projects') }}" method="POST">
             @csrf
+            
                 <div class="alertms r9"></div>
                 <label>
                     <input type="text" id="username" name="project_name" placeholder="إسم المشروع"/><span class="fa fa-user icons"></span>
@@ -71,7 +71,6 @@
                 <div class="alertms r13"></div>
                 <input class="buttonsub" type="submit" value="التسجيل">
             </form>
-        </div>
         
 
 

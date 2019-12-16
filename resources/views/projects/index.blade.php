@@ -101,18 +101,21 @@ h4 a:hover{
 <div class="maindiv">
     <div class="team-row">
             
-    @foreach ($projects as $project)
+     @if ($projects->count())
+         <div class="team-row">
+            @foreach($projects as $project)
         <div class=" profie-box">
             
-            <h4>{{$project->project_name}} <a href=""></a></h4>
-            <small>طرابلس</small>
+            <h4>{{ $project->project_name }}</h4>
+            <strong>{{ $project->budget }}</strong>
             <pre>
-                <b>
-            <small>{{$category->}}</small></b>
+                <b><strong></strong></b>
             <img src="../img/depositphotos_115690756-stock-illustration-young-and-elegant-woman-avatar.jpg">
         
         </div>  
     @endforeach
+    </div>
+    @endif
               
         
             

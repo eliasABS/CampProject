@@ -8,7 +8,10 @@ class ProjectController extends Controller
 {
       
     public function index(){
-        return view('projects.index');
+        return view('projects.index', [
+            'projects' => project::all()
+        ]);
+
     }
     public function create(){
         return view('projects.projectForm');
@@ -19,6 +22,7 @@ class ProjectController extends Controller
         $project->address = request('address');
         $project->budget = request('budget');
         $project->save();
+        return redirect('/projects');
     }
       
 }

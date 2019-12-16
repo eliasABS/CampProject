@@ -101,8 +101,6 @@ h4 a:hover{
 <div class="maindiv">
     <div class="team-row">
             
-     @if ($projects->count())
-         <div class="team-row">
             @foreach($projects as $project)
         <div class=" profie-box">
             
@@ -114,8 +112,6 @@ h4 a:hover{
         
         </div>  
     @endforeach
-    </div>
-    @endif
               
         
             

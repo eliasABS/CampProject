@@ -37,7 +37,7 @@ margin-bottom: 5px;
 color: #2196f3;
 
 }
-small{
+strong{
     color: #555;
 
 }
@@ -69,7 +69,7 @@ small{
 .profie-box:hover p{
     color: #efefef;
 }
-.profie-box:hover small{
+.profie-box:hover strong{
     color: #efefef;
 }
 .profie-box:hover.team-row{
@@ -81,6 +81,7 @@ small{
 }
 h4 a{
     color: #D4995B;
+    text-decoration:none;
 }
 h4 a:hover{
     text-decoration: none;
@@ -97,28 +98,32 @@ h4 a:hover{
     <link rel="stylesheet" href="{{ asset('/css/style.css') }}">
     <title>اصحاب المشاريع</title>
 </head>
-<body>
+<body dir="rtl">
+@extends('layouts/main')
+
+@section('content')
 <div class="maindiv">
     <div class="team-row">
             
             @foreach($projects as $project)
         <div class=" profie-box">
             
-            <h4>{{ $project->project_name }}</h4>
-            <strong>{{ $project->budget }}</strong>
+            <h4><a href="{{ url("/projects/$project->id") }}">{{ $project->project_name }}</a></h4>
+            <h3 ></h3>
+            <strong>الميزانية: {{ $project->budget }}</strong>
             <pre>
-                <b><strong></strong></b>
+                <b><strong>{{ $project->bio }}</strong></b>
             <img src="../img/depositphotos_115690756-stock-illustration-young-and-elegant-woman-avatar.jpg">
         
         </div>  
-    @endforeach
+            @endforeach
               
         
             
         
     </div>
 </div>
-
+@endsection
 </body>
 </html> 
 

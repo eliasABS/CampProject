@@ -20,7 +20,7 @@
         margin-bottom: 10px;
     }
     .content{
-        margin-top: 1px;
+        margin-top: 30px;
     }
     textarea{
         width:100%;
@@ -53,21 +53,22 @@
                 </label>
                 <div class="alertms r10"></div>
                 <label>
-                    <input type="address" id="" name="address" placeholder="العنوان"/><span class="fa fa-user icons"></span>
-                </label><div class="alertms r10"></div>
-                <label>
                     <input type="text" id="username" name="budget" placeholder="الميزانية المطلوبة "/><span class="fa fa-user icons"></span>
                 </label>
+                <div class="alertms r10"></div>
+                <select name="city">
+                     @foreach ($cities as $city)
+                    <option value="{{ $city->id }}">{{$city->name}}</option>
+                    @endforeach
+                </select>
                 <div class="alertms r11"></div>
-                <select>
-                    <option>تقنية المعلومات</option>
-                    <option>التعليم</option>
-                    <option>السيارات</option>
-                    <option>الوجبات السريعة</option>
-                    <option>...</option>
+                <select name="category">
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}"> {{$category->name}} </option>
+                    @endforeach
                 </select>
                 <div class="alertms r6"></div>
-                <textarea id="message" placeholder="نبذة عن المشروع" name="text"></textarea>
+                <textarea placeholder="نبذة عن المشروع" name="bio"></textarea>
                 <div class="alertms r13"></div>
                 <input class="buttonsub" type="submit" value="التسجيل">
             </form>

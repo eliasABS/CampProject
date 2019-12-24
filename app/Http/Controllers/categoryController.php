@@ -17,6 +17,8 @@ class categoryController extends Controller
         $category = new category;
         $category->name = request("name");
         $category->save();
+
+        return redirect('/projects');
     }
 
 }

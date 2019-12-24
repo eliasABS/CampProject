@@ -16,8 +16,10 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('project_name');
-            $table->string('address');
             $table->string('budget');
+            $table->text('bio');
+            $table->integer('category_id');
+            $table->integer('city_id');
             $table->timestamps();
         });
     }

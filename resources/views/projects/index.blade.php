@@ -20,6 +20,7 @@ body{
     position: relative;
     transition: background 0.7s;
     overflow:hidden;
+    
 
 }
 
@@ -45,9 +46,6 @@ strong{
     text-align: center;
     line-height: 177px;
     color:#555 ;
-
-
-     
 
 }
 .team-row{
@@ -87,6 +85,41 @@ h4 a:hover{
     text-decoration: none;
 }
 
+.btn1{
+    appearance: none;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #D4995B;
+    padding: 1.2em 2.8em;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-left:41%;
+    transition: background 0.7s;
+}
+.btn1:hover{
+    background-color: #D4995B;
+    color: #fff;
+}
+.mul{
+    float: left;
+    style: none;
+    margin-top:25px;
+}
+.mul li{
+    text-decoration:none;
+    background-color: #D4995B;
+    border-radius: 0px 5px 20px 0px;
+    list-style-type:none;
+    padding:5px;
+}
+.mul li a{
+    color:#fff;
+}
+.mul li a:hover{
+    text-decoration:none;
+    color: #fff;
+}
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +135,13 @@ h4 a:hover{
 @extends('layouts/main')
 
 @section('content')
+    <ul class="mul">
+          @foreach ($categories as $category)
+              <li>
+                <a  href="{{ url('/projects?category_id=' . $category->id) }}">{{ $category->name }}</a>
+              </li>
+          @endforeach
+        </ul>
 <div class="maindiv">
     <div class="team-row">
             
@@ -109,11 +149,11 @@ h4 a:hover{
         <div class=" profie-box">
             
             <h4><a href="{{ url("/projects/$project->id") }}">{{ $project->project_name }}</a></h4>
-            <h3 ></h3>
-            <strong>الميزانية: {{ $project->budget }}</strong>
+            <br><br>
+            <strong>{{ $project->category->name }}</strong>
             <pre>
-                <b><strong>{{ $project->bio }}</strong></b>
-            <img src="../img/depositphotos_115690756-stock-illustration-young-and-elegant-woman-avatar.jpg">
+                <strong>{{ $project->bio }}</strong>
+            <img src={{ asset('img/icon.jpg') }} height="100px" width="40px">
         
         </div>  
             @endforeach
@@ -122,6 +162,9 @@ h4 a:hover{
             
         
     </div>
+    @auth
+        <a href="{{ url('/projects/create')}}"><button id="addproject" class="btn1">add new project</button></a>
+    @endauth
 </div>
 @endsection
 </body>

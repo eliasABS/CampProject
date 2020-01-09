@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'web_manager' => [
+            'driver' => 'session',
+            'provider' => 'manager',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -70,6 +75,12 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+
+        'manager' => [
+            'driver' => 'database',
+            'table' => 'manager',
+        ] ,
+
 
         // 'users' => [
         //     'driver' => 'database',

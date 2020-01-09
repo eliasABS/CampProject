@@ -1,17 +1,27 @@
 <?php
 
 namespace App\Http\Controllers ;
-use App\project;
+use App\project; 
 use App\category;
 use App\City;
- 
+
 
 class ProjectController extends Controller
 {
       
     public function index(){
+        
+        $projects = Project::latest();
+        
+
+        $projects->when(request('category_id'), function($q) {
+            $q->where('category_id', request('category_id'));
+        });
+
+
         return view('projects.index', [
-            'projects' => project::all()
+            'projects' => project::latest()->get(),
+            'categories' => category::all()
         ]);
 
     }

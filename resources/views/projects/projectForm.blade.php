@@ -10,7 +10,7 @@
 
     <style>
     body{
-        background-image: url('../img/wallpaper.jpg');
+        background:url('{{ asset('img/wallpaper.jpg') }}');
         color:white;
         background-size:cover;
         background-repeat: no-repeat;
@@ -35,7 +35,7 @@
     }
     </style>
 </head>
-<body>
+<body >
     
 
     

@@ -23,7 +23,7 @@ textarea{
 .alertms,
 .formhead,
 .tabs,
-textarea,
+textarea
 {
     width:100%;
 }
@@ -133,7 +133,7 @@ label,
     
     cursor: pointer;
     font-size: 20px;
-    opacity: 50%;
+    opacity: 75%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -200,7 +200,7 @@ label,
   input
 {
     float:left;
-    width:84%;
+    width:100%;
     border:none;
     outline:none;
     color:#A3A9A9;
@@ -309,6 +309,15 @@ input
     width:70%;
 }
 }
+.forgpass{
+    color: #D4995B;
+    text-decoration: none;
+}
+.forgpass:hover{
+    color: #fff;
+    text-decoration: none;
+}
+
 /*     ***Footer setting***       */
 .footer{
     bottom:0;

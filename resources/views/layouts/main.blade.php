@@ -16,42 +16,65 @@ box-shadow: 0 0 0 1px #D4995B;
 ul{
   margin-top:10px;
 }
+footer{
+  margin-bottom:0;
+}
 
 
 </style>
 </head>
+<body dir="rtl">
 <nav  class="navbar navbar-expand-lg bg-dark fixed">
-  <a class="navbar-brand text-light home" href="{{ url('/projects') }}">الرئيسية</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <a class="navbar-brand text-light home" href="{{ url('/home') }}">الرئيسية</a>
+  
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
     <ul class="navbar-nav mr-auto">
       <li  class="searchB"><div class="active-4 mb-4 ">
   <input class="form-control" type="text" placeholder="Search" aria-label="Search">
 </div></li>
-      <li class="nav-item active">
-        <a class="nav-link text-light" href="projectProfile.php">صفحتي <span class="sr-only">(current)</span></a>
-      </li>
-      
+ 
       <li class="nav-item">
         <a class="nav-link text-light" href="{{ url('/projects') }}">المشاريع</a>
       </li>
+      @guest
       <li class="nav-item">
-        <a class="nav-link text-light" href="sponser.php">الداعمين</a>
+         <a class="nav-link text-light" href="{{ url('/login') }}"> تسجيل الدخول</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link text-light active" href="../index.php">تسجيل الدخول</a>
-      </li>
+      @if (Route::has('register'))
+              <li>
+                  <a class="nav-link text-light" href="{{ route('register') }}">{{ __('Register') }}</a>
+              </li>
+          @endif
+        @else
+        <li>
+              <a class="nav-link text-light" href="{{url('#}')}}">
+                  {{ Auth::user()->name }}
+              </a>
+        </li>  
+         <li>
+                  <a class="nav-link text-light" href="{{ route('logout') }}"
+                     onclick="event.preventDefault();
+                                   document.getElementById('logout-form').submit();">
+                      {{ __('Logout') }}
+                  </a>
+
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      @csrf
+                  </form>  
+         </li>
+                  </div>
+      @endguest
     </ul>
   </div>
 </nav>
 
 @yield('content')
 
-<footer " class="footer">
+<footer class="footer">
                 
 <p>.  حقوق النشر 2019 &copy; مولني &reg;  .</p>
                 <p>tec camp                                    </p>
 </footer>
+</body>

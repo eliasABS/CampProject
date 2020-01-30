@@ -18,6 +18,6 @@ class cityController extends Controller
         $city->name = request("name");
         $city->save();
 
-        return redirect('/projects');
+        return redirect('/cities/create');
     }
 }

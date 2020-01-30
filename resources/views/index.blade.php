@@ -19,10 +19,33 @@ ul{
 footer{
   margin-bottom:0;
 }
-
-
+body{
+    background-image:url('{{ asset('img/wallpaper.jpg') }}');
+    color:white;
+    background-size:cover;
+    background-repeat: no-repeat;
+    overflow:hidden;
+}
+h1{
+    text-align:center;
+}
+.wel{
+    padding-top:100px;
+    margin-top:5px;
+}
+.welc{
+    padding-bottom:165px;
+}
+.content{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+p{
+    text-align:center;
+}
 </style>
 </head>
+
 <body dir="rtl">
 <nav  class="navbar navbar-expand-lg bg-dark fixed">
   <a class="navbar-brand text-light home" href="{{ url('/index') }}">الرئيسية</a>
@@ -69,8 +92,12 @@ footer{
     </ul>
   </div>
 </nav>
-
-@yield('content')
+    <div class="content">
+    <h1 class="wel">WELCOME</h1>
+    <h1>TO</h1>
+    <h1 class="welc">WASLA PLATFORM</h1>
+    <p>go to the <a class="forgpass" href="{{ url('/projects') }}">Projects</a></p>
+    </div> 
 
 <footer class="footer">
                 

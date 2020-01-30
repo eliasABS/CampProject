@@ -41,12 +41,12 @@
             <br>
     <div id="con" style=" background-color: #D4995B;;"class="container mt-3 mb-5">
             <img  width="175px" height="175px" src={{ asset("img/icon.jpg")}}>
-           <h2>Project name : {{ $project->project_name }}</h2>
-            <h4>category : {{ $project->category->name }}</h4>
-            <p>budget : {{ $project->budget }}</p>
-            <p>city : {{ $project->city->name }}</p>
-            <p>Bio :{{ $project->bio}}</p><br><br>
-
+           <h2>إسم المشروع : {{ $project->project_name }}</h2>
+            <h4>الصنف : {{ $project->category->name }}</h4>
+            <p>الميزانية : {{ $project->budget }}</p>
+            <p>المدينة : {{ $project->city->name }}</p>
+            <p>رقم الهاتف : {{ $project->phone }}</p>
+            <p>نبذة عن الشروع :{{ $project->bio}}</p><br><br>
     </div>
     @endsection
 

@@ -25,7 +25,7 @@
 </head>
 <body>
 <div class="content">
-                <div class="formhead">رائد الأعمال </div>
+                <div class="formhead">التسجيل</div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
 

@@ -1,6 +1,6 @@
 <?php
 Route::get('/', function() {
-    return redirect('/projects');
+    return redirect('/index');
 });
 
  Route::get('/projects', 'ProjectController@index');
@@ -15,5 +15,12 @@ Route::get('/', function() {
  Route::post("/cities","cityController@store");
  
  Auth::routes();
-
+ //Route::namespace('Admin')->prefix('admin')->as('admin.')->group(function() {
+   // Auth::routes(['register' => false]);
+   // Route::get('/home', 'HomeController@index')->name('home');
+ //});
  Route::get('/home', 'HomeController@index')->name('home');
+
+ Route::get('/profile/{id}','ProfileController@show');
+ Route::get('/index','IndexController@index');
+ 

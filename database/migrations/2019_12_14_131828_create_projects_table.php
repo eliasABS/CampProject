@@ -20,6 +20,7 @@ class CreateProjectsTable extends Migration
             $table->text('bio');
             $table->integer('category_id');
             $table->integer('city_id');
+            $table->integer('phone');
             $table->timestamps();
         });
     }

@@ -24,8 +24,8 @@
 </head>
 <body>
 <div class="content">
-                <div class="formhead" style="color:#fff">تسجيل الدخول</div>
-                    <form method="POST" action="{{ route('login') }}">
+                <div class="formhead" style="color:#fff">{{ __('Admin Login') }}</div>
+                <form method="POST" action="{{ route('admin.login') }}">
                         @csrf
 
                         <div class="alertms r9"></div>
@@ -59,8 +59,6 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                        <div class="alertms r9"></div>
-                        <a class="forgpass"  href="{{url('register')}}">التسجيل</a>
                     </form>
     </div>
 </body>            

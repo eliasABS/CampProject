@@ -20,7 +20,6 @@ body{
     position: relative;
     transition: background 0.7s;
     overflow:hidden;
-    
 
 }
 
@@ -43,8 +42,7 @@ strong{
 
 }
 .profie-box p{
-    text-align: center;
-    line-height: 177px;
+    margin-top: 10px;
     color:#555 ;
 
 }
@@ -120,6 +118,9 @@ h4 a:hover{
     text-decoration:none;
     color: #fff;
 }
+.litem{
+    margin-top:2px;
+}
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -137,7 +138,7 @@ h4 a:hover{
 @section('content')
     <ul class="mul">
           @foreach ($categories as $category)
-              <li>
+              <li class="litem">
                 <a  href="{{ url('/projects?category_id=' . $category->id) }}">{{ $category->name }}</a>
               </li>
           @endforeach
@@ -151,8 +152,7 @@ h4 a:hover{
             <h4><a href="{{ url("/projects/$project->id") }}">{{ $project->project_name }}</a></h4>
             <br><br>
             <strong>{{ $project->category->name }}</strong>
-            <pre>
-                <strong>{{ $project->bio }}</strong>
+                <p>{{ $project->bio }}</p>
             <img src={{ asset('img/icon.jpg') }} height="100px" width="40px">
         
         </div>  

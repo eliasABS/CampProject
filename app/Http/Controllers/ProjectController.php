@@ -39,7 +39,7 @@ class ProjectController extends Controller
         $project->project_name = request('project_name');
         $project->budget = request('budget');
         $project->bio = request('bio');
-        
+        $project->phone = request('phone');
         $project->city_id = request('city');
         $project->category_id = request('category');
 

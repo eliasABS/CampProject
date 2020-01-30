@@ -56,6 +56,10 @@
                     <input type="text" id="username" name="budget" placeholder="الميزانية المطلوبة "/><span class="fa fa-user icons"></span>
                 </label>
                 <div class="alertms r10"></div>
+                <label>
+                    <input type="text" id="phone" name="phone" value="09" placeholder="رقم الهاتف "/><span class="fa fa-user icons"></span>
+                </label>
+                <div class="alertms r10"></div>
                 <select name="city">
                      @foreach ($cities as $city)
                     <option value="{{ $city->id }}">{{$city->name}}</option>
